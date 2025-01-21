@@ -1,0 +1,46 @@
+% \chapter{Teoría clásica de campos}\label{aped.B}
+\chapter{Demostración del teorema de Bloch}\label{aped.B}
+\markboth{Demostración del teorema de Bloch}{Demostración del teorema de Bloch}
+% \markboth{Teoría clásica de campos para lagrangeanas de segundo orden}{Teoría clásica de campos para lagrangeanas de segundo orden}
+\lhead[\thepage]{APÉNDICE \thechapter. \rightmark}
+\rhead[APÉNDICE \thechapter. \leftmark]{\thepage}
+
+% \section{Ideas Generales}
+% \lhead[\thepage]{\thesection. Ideas Generales}\label{B.1.}
+%
+% Considerar ...
+
+% \subsection{Demostración del teorema de Bloch}
+
+% Debido a la simetría se traslación de una red cristalina, la función de onda $\psi\left(\vec{r}\right)$ del sistema debe ser invariante a traslaciones de un vector $\vec{R} = \sum_{i\in I}\alpha_i\vec{a}_i$ donde $\vec{a}_i$ son los vectores primitivos de la red cristalina y $\alpha_i$ son números enteros.
+Dada una red cristalina con los vectores primitivos $\{\vec{a}_i\}$. Se define el vector traslación $\vec{R}$ como la combinación lineal $\sum_{i\in I}\alpha_i\vec{a}_i$, donde $\alpha_i$ son números enteros, y el conjunto de estos vectores como $\mathcal{L}$.
+Se define el operador traslación $T_{\mathbf{R}}$ aplicado en la función $f$ como
+\begin{equation}
+	T_{\mathbf{R}} f(\vec{r}) = f(\vec{r} + \vec{R})
+\end{equation}
+Debido a la simetría de traslación de la red cristalina se tiene que el potencial debido a la interacción de la red cristalina con los electrones es invariante frente a traslaciones $\vec{R}$. Además ya que $\laplacian_{\vec{r}+\vec{R}} = \laplacian_{\vec{r}}$ el Hamiltoniano es invariante frente a traslaciones $\vec{R}$. De modo que se cumple que
+\begin{equation*}
+	\nonumber T_{ \mathbf{R}} \mathcal{H}(\vec{r}) \psi(\vec{r}) = T_{\mathbf{R}}\left[\epsilon(\vec{r}) \psi(\vec{r})\right] = \epsilon(\vec{r}+\vec{R}) \psi(\vec{r} + \vec{R}) = \mathcal{H}(\vec{r}+\vec{R})\psi(\vec{r} + \vec{R})
+\end{equation*}
+\begin{equation}
+	T_{ \mathbf{R}} \mathcal{H}(\vec{r}) \psi(\vec{r})= \mathcal{H}(\vec{r}) T_{\mathbf{R}}\psi(\vec{r})
+\end{equation}
+Entonces $\left[T_{\mathbf{R}} , \mathcal{H}\right] = 0$. Así el Hamiltoniano y el operador traslación $T_{\vec{R}}$ tienen autofunciones y autovalores en común.\par
+Se define $\lambda(\vec{R})$ como un autovalor correspondiente a una de estas autofunciones comunes, es decir $T_{\mathbf{R}} \psi(\vec{r}) = \lambda(\vec{R}) \psi(\vec{r})$.\par
+De la definición del operador traslación se tiene que para los vectores $\vec{R}, \vec{P} \in \mathcal{L}$ se cumple que
+\begin{align}
+	\nonumber T_{\mathbf{R}}T_{\mathbf{P}}\psi(\vec{r}) = T_{\mathbf{R} + \mathbf{P}}\psi(\vec{r}) \\
+	\lambda(\vec{R}) \lambda(\vec{P}) = \lambda(\vec{R} + \vec{P})\label{eq:blochprod}
+\end{align}
+Sin embargo \eqref{eq:blochprod} tiene dos posibles soluciones, $e^{i \vec{k}\cdot\vec{R}}$ y $e^{\vec{k}\cdot\vec{R}}$. Para descartar una de estas se usa la condición de normalización de la función de onda en $T_{\mathbf{R}}\psi(\vec{r})=\lambda(\vec{R})\psi(\vec{r})=\psi(\vec{r} + \vec{R})$. De la cual se obtiene la restricción $\abs{\lambda(\vec{R})}=1$. De este modo la solución es dada por
+\begin{equation}
+	\lambda(\vec{R}) = e^{i\vec{k}\cdot \vec{R}}
+\end{equation}
+Por lo que
+\begin{equation}
+	\psi(\vec{r} + \vec{R}) = e^{i\vec{k}\cdot \vec{R}}\psi(\vec{r})\label{eq:blochTheorem}
+\end{equation}
+Las funciones que satisfacen \eqref{eq:blochTheorem} son llamadas funciones de onda de Bloch, y son autofunciones del Hamiltoniano $\mathcal{H}$.
+% Este es el teorema de Bloch, el cual como se puede ver en la demostración usa la simetría de traslación de la red cristalina. Nótese que $\psi(\vec{r})$ es la función de onda correspondiente a un electrón y no a todo el conjunto de electrones en la red cristalina.
+%TODO: Definir la función de onda de Bloch y su ortogonalidad
+

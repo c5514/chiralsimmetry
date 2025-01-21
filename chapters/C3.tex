@@ -1,0 +1,150 @@
+\chapter{Campo de Dirac en el grafeno}
+En el capítulo \ref{cap.2} se obtuvo el espectro de energía alrededor de los puntos de Dirac, y este era igual para los conjuntos de puntos $[\vec{K}^{+}]$ y $[\vec{K}^{-}]$. En este capítulo se observará que el Hamiltoniano alrededor de los puntos de Dirac depende del conjunto de puntos al que pertenezca el punto de Dirac sobre el que se analiza. Además, los Hamiltonianos corresponden al Hamiltoniano de la ecuación de Dirac en 2+1 dimensiones para dos representaciones inequivalentes de las matrices de Dirac.
+\section{Indentificación del campo de Dirac}
+%TODO: 
+%Cuál es el hamiltoniano asociado a los puntos de Dirac?
+%Qué matrices de Dirac se identifican?
+%Qué álgebra cumplen estas matrices
+%Qué espacio lineal generan tal álgebra
+%Son inequivalentes tales representaciones 
+%Son irreducibles tales representaciones
+
+Para hallar el Hamiltoniano en la base $\{\phi_1,\phi_2\}$ se usa \eqref{eq:matrixenergy}, asumiendo que $t \in \mathbb{R}$. Así se obtiene
+\begin{equation}
+	\mathcal{H} = \begin{pmatrix}
+		0                   & -tf(\vec{k}) \\
+		-tf^{\ast}(\vec{k}) & 0
+	\end{pmatrix}\label{eq:reducedHamil}
+\end{equation}
+Luego, usando \eqref{eq:firstApproxEnergy1} y \eqref{EQ:firstApproxEnergy2}, se obtiene que el Hamiltoniano alrededor de $\vec{K}^{+}_{mn}$
+\begin{equation}
+	\mathcal{H}^{+} = \begin{pmatrix}
+		0                                  & \frac{-3at}{2}(\kappa_1+i\kappa_2) \\
+		\frac{-3at}{2}(\kappa_1-i\kappa_2) & 0
+	\end{pmatrix} = \frac{3at}{2}\left(-\kappa_1\sigma_1+\kappa_2\sigma_2\right)\label{eq:diracHam1}
+\end{equation}
+y el Hamiltoniano alrededor de $\vec{K}^{-}_{mn}$
+\begin{equation}
+	\mathcal{H}^{-} = \begin{pmatrix}
+		0                                   & \frac{-3at}{2}(-\kappa_1+i\kappa_2) \\
+		\frac{-3at}{2}(-\kappa_1-i\kappa_2) & 0
+	\end{pmatrix} = \frac{3at}{2}\left(\kappa_1\sigma_1+\kappa_2\sigma_2\right)\label{eq:diracHam2}
+\end{equation}
+Se observa que los Hamiltonianos correspondientes a dos elementos de \eqref{eq:diracpointequiv1} son iguales, también para los elementos de \eqref{eq:diracpointequiv2}. Por lo que estos forman dos clases de equivalencia, es decir que hay dos clases de puntos de Dirac inequivalentes frente a traslaciones en los vectores primitivos de la red recíproca. Esto es consistente con el hecho de que al ser la red recíproca del grafeno de forma hexagonal, por ende con una celda de Wigner-Seitz de dos elementos, los elementos de la red recíproca se clasifican en dos clases como en el caso de la red cristalina.\par
+% Se sabe que las matrices gamma tienen dos representaciones inequivalentes en el espacio $2+1$, estas son
+% \begin{align}
+% 	\gamma^{0} = \sigma_3 \quad \gamma^{1} = -i\sigma_1\quad \gamma^{2} = i\sigma_2 \\
+% 	\gamma^{0} = \sigma_3 \quad \gamma^{1} =\hspace{0.3cm} i\sigma_1\quad \gamma^{2} = i\sigma_2
+% \end{align}
+% Sin embargo es posible encontrar una representación en la cual se muestren ambos casos, por lo que se definen
+% \begin{equation}
+% 	\gamma^{0} = \begin{pmatrix}
+% 		\sigma_3 & 0        \\
+% 		0        & \sigma_3
+% 	\end{pmatrix}\quad \gamma^{1} = \begin{pmatrix}
+% 		-i\sigma_1 & 0         \\
+% 		0          & i\sigma_1
+% 	\end{pmatrix}
+% 	\quad \gamma^{2}=\begin{pmatrix}
+% 		i\sigma_2 & 0         \\
+% 		0         & i\sigma_2
+% 	\end{pmatrix}
+% \end{equation}
+% Así se puede expresar el Hamiltoniano en \eqref{eq:hamilMonGraph1} como
+% \begin{equation}
+% 	\mathcal{H} = \frac{-3at}{2}i \left(\kappa_1 \gamma^{1} + \kappa_2 \gamma^{2}\right) = -i \left(\frac{3at}{2}\right)\kappa_i\gamma^{i}
+% \end{equation}
+% Al reemplazar $k_j$ por $i\partial_j$ se puede notar que el Hamiltoniano es igual al correspondiente a la ecuación de Dirac en 2+1 dimensiones para una partícula sin masa
+% \begin{equation}
+% 	\gamma^{\mu}\partial_\mu \phi = 0
+% \end{equation}
+% con velocidad de $\frac{3at}{2}$. Esta es conocida como la velocidad de Fermi.\par
+% Por lo que el entorno alrededor de los puntos de Dirac del grafeno puede ser descrito usando cuasipartículas que siguen la ecuación de Dirac en 2+1 dimensiones para una velocidad de $\frac{3at}{2}$.
+
+
+Se sabe que las matrices de Dirac cumplen el álgebra
+\begin{equation}
+	\left\{\gamma^\mu,\gamma^\nu\right\} = 2I g^{\mu\nu}
+\end{equation}
+Para el caso en $2+1$ dimensiones, es decir que $g$ tiene una signatura $(+, -, -)$, existen dos representaciones que satisfacen esta relación:
+\begin{align}
+	\begin{split}
+		\gamma^{0} = \sigma_3 \hspace{1cm} \gamma^{1} = -i\sigma_2\hspace{1cm} \gamma^{2} = -i\sigma_1\\
+		\gamma^{0} = \sigma_3 \hspace{1cm} \gamma^{1} = \hspace{0.3cm}i\sigma_2 \hspace{1cm} \gamma^{2} = -i\sigma_1
+	\end{split}\label{eq:DiracMatrices}
+\end{align}
+Estas son representaciones inequivalentes ya que si fueran equivalentes debería existir una matriz $S$ tal que
+\begin{equation}
+	S^{-1}\sigma_3 S = \sigma_3 \hspace{1cm} S^{-1}(i\sigma_2) S = -i\sigma_2 \hspace{1cm} S^{-1}(-i\sigma_1)S = -i\sigma_1
+\end{equation}
+Al multiplicar estas se obtiene que $S^{-1} \sigma_3\sigma_2\sigma_1 S = -\sigma_3\sigma_2\sigma_1$, pero las matrices de Pauli cumplen que $\sigma_3\sigma_2\sigma_1 = -iI$, por lo que $S^{-1} S = -I$. Esto implica que $I = 0$, lo cual es un absurdo. Así estas representaciones son inequivalentes.\par
+Además, al ser matrices de $2\times 2$ si estas fueran reducibles debería existir una base que las diagonalize pero las matrices de Pauli siguen la relación $\left[\sigma_j,\sigma_k\right]= 2i\epsilon_{jkl}\sigma_{l}$, es decir que no commutan entre sí, por ende estas representaciones son irreducibles.
+
+Los Hamiltonianos de \eqref{eq:diracHam1} y \eqref{eq:diracHam2} se pueden expresar como
+\begin{equation}
+	\mathcal{H}^{+} = \frac{3at}{2}(-i\kappa_1\sigma_3\sigma_2 - i\kappa_2\sigma_3\sigma_1) \hspace{2cm}\mathcal{H}^{-} = \frac{3at}{2}(i\kappa_1\sigma_3\sigma_2 - i\kappa_2\sigma_3\sigma_1)
+\end{equation}
+Entonces estas se pueden expresar como
+\begin{equation}
+	\mathcal{H}^{\pm} = \frac{3at}{2}(\kappa_1 \gamma^0\gamma^1 + \kappa_2\gamma^0\gamma^2)
+\end{equation}
+para representaciones distintas de las matrices de Dirac. Por lo que si se quiere obtener un Hamiltoniano que considere ambas clases de equivalencia se puede elegir una representación reducible que contenga a las representaciones en \eqref{eq:DiracMatrices}. Así el Hamiltoniano tiene la forma
+\begin{equation}
+	\nonumber \mathcal{H}  = \begin{pmatrix}
+		\mathcal{H}^{+} & 0               \\
+		0               & \mathcal{H}^{-}
+	\end{pmatrix} = \frac{3at}{2}\gamma^0(\kappa_1\gamma^1+ \kappa_2 \gamma^2)\label{eq:hamilMonGraph1}
+\end{equation}
+donde la representación reducible de matriz de Dirac está dada por
+\begin{equation}
+	\gamma^0= \begin{pmatrix}
+		\sigma_3 & 0        \\
+		0        & \sigma_3
+	\end{pmatrix}\hspace{1.5cm}\gamma^1 = \begin{pmatrix}
+		-i\sigma_2 & 0         \\
+		0          & i\sigma_2
+	\end{pmatrix}\hspace{1.5cm} \gamma^2 = \begin{pmatrix}
+		-i\sigma_1 & 0          \\
+		0          & -i\sigma_1
+	\end{pmatrix}\label{eq:reducDirac}
+\end{equation}
+\section{Campo de Dirac}
+%TODO: 
+%Cuáles son las ecuaciones de Dirac?
+%Cómo se transforman por paridad?
+La ecuación de Dirac para una partícula con espín $1/2$ es
+\begin{equation}
+	(i\gamma^\mu\partial_\mu -m)\psi = 0
+\end{equation}
+Usando las dos representaciones irreducibles de la matriz de Dirac dadas en \eqref{eq:DiracMatrices} para el caso donde las partículas no tienen masa se tienen dos ecuaciones de Dirac
+\begin{align}
+	\begin{split}
+		(\sigma_3 p_0 - i\sigma_2 p_1 + i\sigma_1 p_2)\psi(t,x^1,x^2) = 0 \\
+		(\sigma_3 p_0 + i\sigma_2 p_1 + i\sigma_1 p_2) \widetilde{\psi}(t,x^1,x^2) = 0
+	\end{split}
+\end{align}
+Al multiplicar por la matriz $\sigma_3$ por la izquierda se obtienen
+\begin{align}
+	\begin{split}
+		(I p_0 - \sigma_1 p_1 - \sigma_2 p_2)\psi(t,x^1,x^2) = 0 \\
+		(I p_0 + \sigma_1 p_1 - \sigma_2 p_2) \widetilde{\psi}(t,x^1,x^2) = 0
+	\end{split}
+\end{align}
+Reemplazando $p_0$ por $i\partial_t$
+\begin{align}
+	\begin{split}
+		(\sigma_1 p_1 + \sigma_2 p_2)\psi(t,x^1,x^2) = i\frac{\partial \psi(t,x_1,x_2)}{\partial t} \\
+		(-\sigma_1 p_1 + \sigma_2 p_2) \widetilde{\psi}(t,x^1,x^2) = i\frac{\partial \widetilde{\psi}(t,x_1,x_2)}{\partial t}
+	\end{split}
+\end{align}
+Entonces los Hamiltonianos alrededor de los puntos de Dirac dados en \eqref{eq:diracHam1} y \eqref{eq:diracHam2} son los Hamiltonianos de la ecuación de Dirac en 2+1 dimensiones al reemplazar $p_1\mapsto\kappa_1$ y $p_2\mapsto\kappa_2$ para una velocidad distinta a $c$, dada por $v_F = \frac{3at}{2}$ y llamada \textbf{velocidad de fermi}.\par
+%NOTE: Qué es la velocidad de Fermi? Impone una restricción a la velocidad de las partículas? 
+%Se puede obtener la expresión del Hamiltoniano  a partir de las representaciones de las matrices de Dirac
+Al realizar la transformación por paridad, definida como el cambio $(x^1, x^2)\mapsto(-x^1,x^2)$, se obtiene
+\begin{align}
+	\begin{split}
+		(-\sigma_1 p_1 + \sigma_2 p_2)\psi(t,-x^1,x^2) = i\frac{\partial \psi(t,-x_1,x_2)}{\partial t} \\
+		(\sigma_1 p_1 + \sigma_2 p_2) \widetilde{\psi}(t,-x^1,x^2) = i\frac{\partial \widetilde{\psi}(t,-x_1,x_2)}{\partial t}
+	\end{split}
+\end{align}
+De modo que los roles de $\psi$ y $\widetilde{\psi}$ se intercambian. Así la representación reducible en \eqref{eq:reducDirac} es invariante si se intercambian los roles de las funciones de onda asociadas a cada clase de equivalencia.
