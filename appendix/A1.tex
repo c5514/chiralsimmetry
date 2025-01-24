@@ -6,6 +6,29 @@
 \section{Ideas Generales}
 \lhead[\thepage]{\thesection. Ideas Generales}\label{A.1.}
 
-Se muestran los conceptos generales de los puntos de los grupos afines y una definición diferente a los libros usuales de física del estádo sólido para una red cristalina.\\
-Formalmente un grupo espacio es definido como el grupo de isometrías que dejan invariantes el patrón de algún cristal.
+Se muestran los conceptos generales de los puntos de los grupos afines y una definición diferente a los libros usuales de física del estado sólido para una red cristalina.
+\section{Grupo puntual}
+Formalmente el grupo puntual de una estructura cristalina es definido como el conjunto de transformaciones que dejan invariantes la estructura, fijando un punto de esta. Los elementos de este grupo, en general son:
+\begin{enumerate}
+	\item Simetría de rotación
+	\item Simetría de reflexión
+	\item Simetría de inversión
+\end{enumerate}
+\subsection{Simetría de rotación}
+Para el caso de una estructura cristalina en 2 dimensiones sus elementos son denotados como
+\begin{equation}
+	r(\theta) = \begin{pmatrix}
+		\cos\theta & -\sin\theta \\
+		\sin\theta & \cos\theta
+	\end{pmatrix}
+\end{equation}
+Ya que la rotación en un ángulo $\theta$ deja invariante a la estructura cristalina, la composición $r(\theta)\circ r(\phi)$ también es una simetría de rotación. Además la rotación $r(-\theta)$ es la inversa de $r(\theta)$, de modo que al incluir a la matriz identidad se obtiene un grupo llamado el grupo de rotaciones.
+\subsection{Simetría de reflexión}
+Esta simetría se fija un plano de reflexión y se realiza la operación
+%TODO: Agregar figura
+\subsection{Simetría de inversión}
+Esta simetría fija un punto como el origen de coordenadas y se realiza la transformación
+\begin{equation}
+	(x,y,z) \longrightarrow (-x, -y ,-z)
+\end{equation}
 

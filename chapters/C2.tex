@@ -37,11 +37,16 @@ Dado que los vectores primitivos son definidos como los vectores que conectan do
 	\vec{a}_1 = \frac{a\sqrt{3}}{2}\left(\hat{x}+\sqrt{3} \hat{y}\right),\hspace{0.5cm}\vec{a}_2= \frac{a \sqrt{3}}{2}\left(-\hat{x}+\sqrt{3} \hat{y}\right)\label{eq:primitive}
 \end{equation}
 Al desplazar la celda de Wigner-Seitz en un vector que es igual a una combinación lineal de coeficientes enteros de los vectores primitivos se puede generar la estructura cristalina del grafeno. Por lo que estos vectores serán de utilidad cuando se estudien las propiedades de simetría de la estructura cristalina.\par
-A partir de los vectores primitivos se pueden obtener los vectores $\vec{a}_1^{\ast}$, $\vec{a}_2^{\ast}$, definidos como los vectores que cumplen la relación \cite{Bradley2009}:
+La red cristalina está expresada en el espacio de posiciones, esto no es conveniente cuando se requiere una expresión que no dependa de estas. Al realizar el cambio a el espacio de vectores de onda $\vec{k}$, la red cristalina asociada a este tiene como vectores primitivos a $\vec{a}_1^{\ast}$ y $\vec{a}_2^{\ast}$, los cuales satisfacen la relación 
 \begin{equation}
 	\vec{a}^{\ast}_i\cdot \vec{a}_j = 2\pi\delta_{ij} \quad \left(i,j = 1,2\right).
 \end{equation}
-Estos vectores pueden formar una estructura cristalina, llamada \emph{red recíproca}, por lo que son vectores primitivos de esta última. En la base $\left\{\hat{x}, \hat{y}\right\}$ se expresan como 
+para poder mantener la periodicidad de la red cristalina. Esta red cristalina es llamada \emph{red recíproca}.\\ Los vectores primitivos de la red recíproca se pueden expresar en la base $\left\{\hat{x}, \hat{y}\right\}$ como
+% A partir de los vectores primitivos se pueden obtener los vectores $\vec{a}_1^{\ast}$, $\vec{a}_2^{\ast}$, definidos como los vectores que cumplen la relación \cite{Bradley2009}:
+% \begin{equation}
+% 	\vec{a}^{\ast}_i\cdot \vec{a}_j = 2\pi\delta_{ij} \quad \left(i,j = 1,2\right).
+% \end{equation}
+% Estos vectores pueden formar una estructura cristalina, llamada \emph{red recíproca}, por lo que son vectores primitivos de esta última. En la base $\left\{\hat{x}, \hat{y}\right\}$ se expresan como 
 \begin{equation}
 	\vec{a}^{\ast}_1 = \frac{2\pi}{3a}\left(\sqrt{3}\hat{x}+\hat{y}\right),\hspace{0.5cm}\vec{a}^{\ast}_2= \frac{2\pi}{3a}\left(-\sqrt{3}\hat{x}+\hat{y}\right).\label{eq:recipprimitive}
 \end{equation}
@@ -52,7 +57,7 @@ A continuación se muestran los puntos de la red recíproca más cercanos al ori
 	\vec{k} = -\frac{4\pi}{3\sqrt{3}a}\hat{x}  \hspace{1.5cm} \vec{k} = -\frac{2\pi}{3\sqrt{3}a} \hat{x}+\frac{2\pi}{3a} \hat{y} \hspace{1.5cm} \vec{k} = -\frac{2\pi}{3\sqrt{3}a} \hat{x}-\frac{2\pi}{3a} \hat{y}
 \end{aligned}
 \end{equation}
-Para el caso de la red recíproca, la celda de Wigner-Seitz es llamada \emph{zona de Brillouin}. Esta tiene la forma de un paralelogramo que contiene dos puntos de la red recíproca, ya que la red recíproca tiene un arreglo hexagonal, al igual que la estructura cristalina. Por ende, la red recíproca se pueden dividir en dos sub-redes triangulares.
+Para el caso de la red recíproca, la celda de Wigner-Seitz es llamada \emph{zona de Brillouin}. Esta tiene la forma de un paralelogramo que contiene dos puntos de la red recíproca, ya que la red recíproca tiene un arreglo hexagonal, al igual que la estructura cristalina. Por ende, la red recíproca se pueden dividir en dos sub-redes triangulares y tiene las mismas propiedades de simetría que la estructura cristalina inicial.
 \subsection{Propiedades de simetría}
 El grafeno tiene ciertas transformaciones de simetría que se definen como aquellas que dejan invariante a la estructura cristalina. 
 \begin{figure}[!httb]
@@ -353,11 +358,11 @@ Entonces un sistema de $n$ partículas idénticas puede descrito por solo una si
 % Qué orbitales intervienen en tal interacción
 % Por qué en el grafeno es válida la aproximación tight-binding
 
-% En general, resolver \eqref{eq:schrIndepen} es complicado. Sin embargo, 
-La estructura electrónica de un átomo de carbono es $1s^22s^22p^2$. En el grafeno un orbital $s$ y los orbitales $p_x$, $p_y$ se encuentran hibridizados, formando enlaces $\sigma$, los cuales son lo suficientemente fuertes como para ignorar los efectos de sus interacciones con los demás electrones o átomos de carbono. Sin embargo, los orbitales $p_z$, a pesar de estar fuertemente localizados alrededor del átomo de carbono al que su electrón pertenece, pueden ser afectados por la interacción electrostática con los demás iones de carbono. De modo que es válido usar la aproximación tight-binding para los electrones en el orbital $p_z$ del grafeno.\par
-Así el Hamiltoniano para un electrón está formado por las contribución del movimiento de los electrones y las interacciones ión-electrón, esto es
+En un átomo aislado los orbitales están localizados alrededor del núcleo de este. Se puede considerar que para formar una red cristalina se acercan los átomos que la formarán, tales que al inicio se encuentran muy alejados unos de otros, para así poder ignorar las interacciones entre estos. Al hacer esto los orbitales de los electrones serán perturbados debido a la interacción con los otros átomos. En la aproximación tight-binding solo se consideran las interacciones con los átomos vecinos, de modo que al ser perturbados los orbitales los electrones pueden pasar de estar ligados a un átomo a estar ligado a uno de sus vecinos, debido a la formación de enlaces electrónicos.\par
+El carbono tiene una estructura electrónica dada por $1s^22s^22p^2$, de modo que para formar un estructura cristalina hexagonal, se encuentra hibridizado un orbital $s$ con los orbitales $p_x$ y $p_y$ del segundo nivel de energía, formando enlaces tipo $\sigma$. Los enlaces $\sigma$ al ser robustos no contribuyen de a las propiedades electrónicas del grafeno\cite{Jena2022}, por lo que no se consideran en este desarrollo. Los enlaces $p_z$ son forman enlaces $\pi$ debido a la interacción electrostática con los otros núcleos de carbono\footnote{No se consideran las interacciones entre los electrones en los orbitales $p_z$}. Así estos son los usados en la aproximación tight-binding.\par
+El Hamiltoniano para un electrón en el orbital $p_z$ en la aproximación tight-binding está dado por
 \begin{equation}
-	H(\vec{r}) = - \frac{\hbar^2}{2m}\laplacian + \sum_{\vec{R}\in \mathcal{L}}\left( V(\vec{r} - \vec{r}_1 - \vec{R}) + V(\vec{r} - \vec{r}_2 - \vec{R})\right)
+	H(\vec{r}) = - \frac{\hbar^2}{2m}\laplacian + \sum_{\vec{R}\in \mathcal{L}}\left( V(\vec{r} - \vec{r}_1 - \vec{R}) + V(\vec{r} - \vec{r}_2 - \vec{R})\right),
 \end{equation}
 donde $\vec{r}_1$ y $\vec{r}_2$ son las posiciones de los núcleos de carbono en el interior de la celda unitaria y $\mathcal{L}$ es el conjunto de los vectores posición de cada punto de la estructura cristalina.
 \subsection{Función de onda de Bloch}
@@ -370,7 +375,7 @@ De igual se puede definir $\phi_2(\vec{r})$ como la función de onda correspondi
 \begin{equation}
 	H\phi_2(\vec{r}) = \epsilon_2\phi_2(\vec{r}) + \left(\sum_{\vec{R} \neq \vec{0}}\left(V(\vec{r} - \vec{r}_1 - \vec{R})+ V(\vec{r} - \vec{r}_2 - \vec{R})\right) + V(\vec{r}-\vec{r}_1)\right)\phi_2(\vec{r}),
 \end{equation}
-Sin embargo, debido a la simetría de la estructura cristalina se debe cumplir que $\epsilon_1 = \epsilon_2$ y que las otras sumatorias de potenciales son iguales, de modo que se puede definir $\epsilon = \epsilon_1, \epsilon_2$ y el operador $\hat{U}$ que corresponde a las interacciones con los iones de los demás átomos de carbono. Así
+Debido a la simetría de la estructura cristalina se debe cumplir que $\epsilon_1 = \epsilon_2$ y que las otras sumatorias de potenciales son iguales, de modo que se puede definir $\epsilon = \epsilon_1, \epsilon_2$ y el operador $\hat{U}$ que corresponde a las interacciones con los iones de los demás átomos de carbono. Así
 \begin{equation}
 H \ket{\phi_j} = \epsilon \ket{\phi_j} + \hat{U}\ket{\phi_j},\label{eq:tightapp}
 \end{equation}
@@ -393,7 +398,7 @@ la cual está normalizada, es decir
 \begin{equation}
 	\int \phi^{\ast}(\vec{r}-\vec{R})\phi(\vec{r} - \vec{R}') \dd^2 r = \delta_{\vec{R},\vec{R}'},
 \end{equation}
-y se puede puede interpretar como la función de onda correspondiente a una celda de Wigner-Seitz.\par
+ se puede puede interpretar como la función de onda correspondiente a una celda de Wigner-Seitz.\par
 Para verificar que esta definición mantiene la condición de normalización de la función de onda de Bloch, se expresa $\psi_{\vec{k}}(\vec{r})$ en función de $\phi(\vec{r})$
 \begin{equation}
    \psi_{\vec{k}}(\vec{r}) = \frac{1}{\sqrt{N}} \sum_{\vec{R} \in \mathcal{L}} e^{i \vec{k}\cdot \vec{R}} \phi(\vec{r} - \vec{R}).
@@ -448,18 +453,18 @@ De igual forma se obtiene que
 \end{equation}
 Al definir 
 \begin{equation}
- t = -\int \phi_1^{\ast}(\vec{r}) U(\vec{r}) \phi_2(\vec{r}) \dd^2 r,
+ \hbar t = -\int \phi_1^{\ast}(\vec{r}) U(\vec{r}) \phi_2(\vec{r}) \dd^2 r,
 \end{equation}
 las ecuaciones obtenidas de \eqref{eq:waveTight} se pueden expresar como
 \begin{align}
-  \frac{\beta_1}{\sqrt{N}}(E(\vec{k})-\epsilon) & =\frac{-\beta_2 t}{\sqrt{N}}\left(1+e^{-i \vec{k}\cdot \vec{a}_1}+e^{-i \vec{k}\cdot \vec{a}_2}\right) \\
-  \frac{\beta_2}{\sqrt{N}}(E(\vec{k})-\epsilon)   & =\frac{-\beta_1t^{\ast}}{\sqrt{N}}\left(1+e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}\right)
+  \frac{\beta_1}{\sqrt{N}}(E(\vec{k})-\epsilon) & =\frac{-\beta_2 \hbar t}{\sqrt{N}}\left(1+e^{-i \vec{k}\cdot \vec{a}_1}+e^{-i \vec{k}\cdot \vec{a}_2}\right) \\
+  \frac{\beta_2}{\sqrt{N}}(E(\vec{k})-\epsilon)   & =\frac{-\beta_1\hbar t^{\ast}}{\sqrt{N}}\left(1+e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}\right)
 \end{align}
 En forma matricial esto es
 \begin{equation}
 	\begin{pmatrix}
-    \tilde{E}                                     & tf(\vec{k}) \\
-    t^{\ast}f^{\ast}(\vec{k}) & \tilde{E}
+    \tilde{E}                                     & \hbar tf(\vec{k}) \\
+    \hbar t^{\ast}f^{\ast}(\vec{k}) & \tilde{E}
 	\end{pmatrix}\begin{pmatrix}
 		\beta_1 \\\beta_2
 	\end{pmatrix}= \begin{pmatrix}
@@ -472,49 +477,49 @@ donde
 \end{equation}
 Ya que $\beta_1$ y $\beta_2$ no pueden ser cero el determinante de la matriz debe ser cero. Por lo que
 \begin{equation}
-  \tilde{E}^2(\vec{k}) = \abs{t}^2\abs{f(\vec{k})}^2\label{eq:energysquare}
+  \tilde{E}^2(\vec{k}) = \hbar^2\abs{t}^2\abs{f(\vec{k})}^2\label{eq:energysquare}
 \end{equation}
 De la ecuación \eqref{eq:matrixenergy} se obtiene
 \begin{equation}
-  \beta_2 = \frac{-t}{\tilde{E}}f(\vec{k})\beta_1
+  \beta_2 = \frac{-t\hbar}{\tilde{E}}f(\vec{k})\beta_1
 \end{equation}
 Reemplazando en \eqref{eq:waveindiv}
 \begin{equation}
-  \phi(\vec{r}) = \beta_1 \phi_1(\vec{r}) - \frac{t}{\tilde{E}}f(\vec{k})\beta_1 \phi_2(\vec{r})
+  \phi(\vec{r}) = \beta_1 \phi_1(\vec{r}) - \frac{t\hbar}{\tilde{E}}f(\vec{k})\beta_1 \phi_2(\vec{r})
 \end{equation}
 Ya que está normalizada
 \begin{equation}
   \begin{aligned}[b]
-    1 & = \abs{\beta_1}^2 +\abs{\beta_1}^2\left(\frac{\abs{t}}{\tilde{E}}\right)^2\abs{f(\vec{k})}^2+\abs{\beta_1}^2\left(\frac{t}{\tilde{E}}\right)f(\vec{k})\int \phi_1^{\ast}(\vec{r})\phi_2(\vec{r}) \dd^2 r \\&\quad+\abs{\beta_1}^2\left(\frac{t^{\ast}}{\tilde{E}}\right)f^{\ast}(\vec{k})\int \phi_2^{\ast}(\vec{r})\phi_1(\vec{r}) \dd^2 r\\
-      & = \abs{\beta_1}\left[1 + \frac{\abs{t}^2}{\tilde{E}^2}\abs{f(\vec{k})}^2\right]\\
+    1 & = \abs{\beta_1}^2 +\abs{\beta_1}^2\left(\frac{\hbar\abs{t}}{\tilde{E}}\right)^2\abs{f(\vec{k})}^2+\abs{\beta_1}^2\left(\frac{t\hbar}{\tilde{E}}\right)f(\vec{k})\int \phi_1^{\ast}(\vec{r})\phi_2(\vec{r}) \dd^2 r \\&\quad+\abs{\beta_1}^2\left(\frac{t^{\ast}\hbar}{\tilde{E}}\right)f^{\ast}(\vec{k})\int \phi_2^{\ast}(\vec{r})\phi_1(\vec{r}) \dd^2 r\\
+      & = \abs{\beta_1}\left[1 + \frac{\hbar^2\abs{t}^2}{\tilde{E}^2}\abs{f(\vec{k})}^2\right]\\
 	           & = 2\abs{\beta_1}^2
   \end{aligned}
 \end{equation}
 % Para resolver la ecuación \eqref{eq:coefficientwave} se usan los dos casos que se obtienen de  \eqref{eq:energysquare}:
 Se puede asumir que $\beta_1\in \mathbb{R}$ ya que está si fuera un número complejo solo agregaría un factor de fase a \eqref{eq:waveindiv}. Entonces se puede hallar el valor de $\phi(\vec{r})$ para los dos casos obtenidos de \eqref{eq:energysquare}:
 \begin{itemize}
-  \item Para $\tilde{E} = \abs{tf(\vec{k})}$
+  \item Para $\tilde{E} = \hbar\abs{tf(\vec{k})}$
 	      \begin{equation}
 		      \phi(\vec{r}) = \frac{1}{\sqrt{2}}\bigg(\phi_1(\vec{r})-\frac{t}{\abs{t}}\resizebox{0.5\textwidth}{!}{$\frac{1 + e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}}{\sqrt{3+2 \cos\left(\vec{k} \cdot \vec{a}_1\right)+2 \cos\left(\vec{k}\cdot \vec{a}_2\right)+2 \cos\left(\vec{k}\cdot (\vec{a}_1-\vec{a}_2)\right)}}$}\phi_2(\vec{r})\bigg)
 	      \end{equation}
-      \item Para $\tilde{E} = -\abs{tf(\vec{k})}$
+      \item Para $\tilde{E} = -\hbar\abs{tf(\vec{k})}$
 	      \begin{equation}
 		      \phi(\vec{r}) = \frac{1}{\sqrt{2}}\bigg(\phi_1(\vec{r})+\frac{t}{\abs{t}}\resizebox{0.5\textwidth}{!}{$\frac{1 + e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}}{\sqrt{3+2 \cos\left(\vec{k} \cdot \vec{a}_1\right)+2 \cos\left(\vec{k}\cdot \vec{a}_2\right)+2 \cos\left(\vec{k}\cdot (\vec{a}_1-\vec{a}_2)\right)}}$}\phi_2(\vec{r})\bigg)
 	      \end{equation}
 \end{itemize}
 Se puede asumir que $t \in \mathbb{R}$, ya que si se eligen las funciones de onda $\tilde{\phi_1}(\vec{r}) = e^{\frac{-i\text{arg}(t)}{2}}\phi_1(\vec{r})$ y $\tilde{\phi}_2(\vec{r}) = e^{\frac{i\text{arg}(t)}{2}}\phi_2(\vec{r})$, la función de onda de Bloch sería $\frac{e^{\frac{i\text{arg}(t)}{2}}}{\sqrt{2}}\left(\tilde{\phi}_1(\vec{r}) \mp \frac{f(\vec{k})}{\abs{f(\vec{k})}}\tilde{\phi}_2(\vec{r})\right)$. Esta solo difiere en un facto de fase de la función de onda si $t$ fuera real.\par
-Entonces las función de onda de Bloch es
+Entonces la función de onda de Bloch es
 \begin{equation}
    \psi(\vec{k}) = \frac{1}{\sqrt{2N}}\sum_{\vec{R} \in \mathcal{L}}e^{i \vec{k}\cdot \vec{R}} \left(\phi_1(\vec{r}) \mp \resizebox{0.4\textwidth}{!}{$\frac{1 + e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}}{\sqrt{3+2 \cos\left(\vec{k} \cdot \vec{a}_1\right)+2 \cos\left(\vec{k}\cdot \vec{a}_2\right)+2 \cos\left(\vec{k}\cdot (\vec{a}_1-\vec{a}_2)\right)}}$}\phi_2(\vec{r})\right),
 \end{equation}
-para $\tilde{E} = \pm t \abs{f(\vec{k})}$
+para $\tilde{E} = \pm \hbar t \abs{f(\vec{k})}$
 % \subsection{Espectros de energía del grafeno}
 \section{Bandas de energía}
 \subsection{Espectro de energía}
 Ya que $\epsilon$ es solo un constante en \eqref{eq:energysquare} se puede asumir que esta es igual a cero, de modo que la energía viene dada por
 \begin{align}
-	\nonumber E(\vec{k}) & = \pm t\abs{f(\vec{k})} = \pm t \sqrt{\left(1+e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}\right)\left(1+e^{-i \vec{k}\cdot \vec{a}_1}+e^{-i \vec{k}\cdot \vec{a}_2}\right)} \\
-	                     & = \pm t \sqrt{3+2 \cos\left(\vec{k}\cdot \vec{a}_1\right)+2 \cos\left(\vec{k}\cdot \vec{a}_2\right)+2 \cos\left(\vec{k}\cdot\left(\vec{a}_1 - \vec{a}_2 \right)\right)}\label{eq:energygraphene}
+	\nonumber E(\vec{k}) & = \pm \hbar t\abs{f(\vec{k})} = \pm \hbar t \sqrt{\left(1+e^{i \vec{k}\cdot \vec{a}_1}+e^{i \vec{k}\cdot \vec{a}_2}\right)\left(1+e^{-i \vec{k}\cdot \vec{a}_1}+e^{-i \vec{k}\cdot \vec{a}_2}\right)} \\
+	                     & = \pm \hbar t \sqrt{3+2 \cos\left(\vec{k}\cdot \vec{a}_1\right)+2 \cos\left(\vec{k}\cdot \vec{a}_2\right)+2 \cos\left(\vec{k}\cdot\left(\vec{a}_1 - \vec{a}_2 \right)\right)}\label{eq:energygraphene}
 \end{align}
 En la Figura \ref{fig:grapheneEnergy1} se muestran las gráficas de los dos valores de $E(\vec{k})$, y se observa que las bandas de energía se intersectan en determinados valores de $\vec{k}$, los cuales son conocidos como los \emph{puntos de Dirac} (ver Fig. \ref{fig:grapheneEnergy2}).
 % ──────────────────────────────────────────────────────────────────────
@@ -538,9 +543,9 @@ En la Figura \ref{fig:grapheneEnergy1} se muestran las gráficas de los dos valo
 % ──────────────────────────────────────────────────────────────────────
 \\Para hallar los valores de los puntos de Dirac se expresa $E(\vec{k})$ en función de $\vec{a}_1$ y $\vec{a}_2$.
 \begin{align}
-	\nonumber E(\vec{k}) & = \pm t \sqrt{3+2 \cos\left(\frac{a \sqrt{3}k_x}{2}+\frac{3ak_y}{2}\right)+2 \cos\left(-\frac{a \sqrt{3}k_x}{2}+\frac{3ak_y}{2}\right)+2 \cos\left(a \sqrt{3}k_x\right)} \\
-	\nonumber            & = \pm t \sqrt{3+4 \cos\left(\frac{3ak_y}{2}\right) \cos\left(\frac{a\sqrt{3}k_x}{2}\right)+2\left[2 \cos^{2}\left(\frac{a \sqrt{3}k_x}{2}\right)-1\right]}               \\
-	                     & = \pm t \sqrt{1+4 \cos\left(\frac{3ak_y}{2}\right) \cos\left(\frac{a\sqrt{3}k_x}{2}\right)+4 \cos^{2}\left(\frac{a \sqrt{3}k_x}{2}\right)}
+	\nonumber E(\vec{k}) & = \pm \hbar t \sqrt{3+2 \cos\left(\frac{a \sqrt{3}k_x}{2}+\frac{3ak_y}{2}\right)+2 \cos\left(-\frac{a \sqrt{3}k_x}{2}+\frac{3ak_y}{2}\right)+2 \cos\left(a \sqrt{3}k_x\right)} \\
+	\nonumber            & = \pm \hbar t \sqrt{3+4 \cos\left(\frac{3ak_y}{2}\right) \cos\left(\frac{a\sqrt{3}k_x}{2}\right)+2\left[2 \cos^{2}\left(\frac{a \sqrt{3}k_x}{2}\right)-1\right]}               \\
+	                     & = \pm \hbar t \sqrt{1+4 \cos\left(\frac{3ak_y}{2}\right) \cos\left(\frac{a\sqrt{3}k_x}{2}\right)+4 \cos^{2}\left(\frac{a \sqrt{3}k_x}{2}\right)}
 \end{align}
 Al completar cuadrados se nota que $E(\vec{k})$ es cero cuando
 \begin{equation}
@@ -603,6 +608,6 @@ Para $\vec{K}^{-}_{mn}$
 \end{align}
 Reemplazando en \eqref{eq:energygraphene} se obtiene 
 \begin{equation}
-   E(\vec{k}) = \pm \frac{3a t}{2} \sqrt{\kappa_1^2 + \kappa_2^2},
+   E(\vec{k}) = \pm \frac{3\hbar a t}{2} \sqrt{\kappa_1^2 + \kappa_2^2},
 \end{equation}
 por lo que los valores de la energía alrededor de los puntos de Dirac es independiente del conjunto de puntos Dirac que se elija. Además la forma del espectro energía alrededor de los puntos de Dirac toma la forma de un cono, lo cual es consistente con el hecho de que sean llamados como \emph{conos de Dirac}.

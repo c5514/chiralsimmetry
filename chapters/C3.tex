@@ -1,6 +1,7 @@
 \chapter{Campo de Dirac en el grafeno}
 En el capítulo \ref{cap.2} se obtuvo el espectro de energía alrededor de los puntos de Dirac, y este era igual para los conjuntos de puntos $[\vec{K}^{+}]$ y $[\vec{K}^{-}]$. En este capítulo se observará que el Hamiltoniano alrededor de los puntos de Dirac depende del conjunto de puntos al que pertenezca el punto de Dirac sobre el que se analiza. Además, los Hamiltonianos corresponden al Hamiltoniano de la ecuación de Dirac en 2+1 dimensiones para dos representaciones inequivalentes de las matrices de Dirac.
-\section{Indentificación del campo de Dirac}
+\section{Identificación del campo de Dirac}
+\subsection{Hamiltoniano y matrices de Dirac}
 %TODO: 
 %Cuál es el hamiltoniano asociado a los puntos de Dirac?
 %Qué matrices de Dirac se identifican?
@@ -12,23 +13,23 @@ En el capítulo \ref{cap.2} se obtuvo el espectro de energía alrededor de los p
 Para hallar el Hamiltoniano en la base $\{\phi_1,\phi_2\}$ se usa \eqref{eq:matrixenergy}, asumiendo que $t \in \mathbb{R}$. Así se obtiene
 \begin{equation}
 	\mathcal{H} = \begin{pmatrix}
-		0                   & -tf(\vec{k}) \\
-		-tf^{\ast}(\vec{k}) & 0
+		0                         & -t\hbar f(\vec{k}) \\
+		-t\hbar f^{\ast}(\vec{k}) & 0
 	\end{pmatrix}\label{eq:reducedHamil}
 \end{equation}
 Luego, usando \eqref{eq:firstApproxEnergy1} y \eqref{EQ:firstApproxEnergy2}, se obtiene que el Hamiltoniano alrededor de $\vec{K}^{+}_{mn}$
 \begin{equation}
 	\mathcal{H}^{+} = \begin{pmatrix}
-		0                                  & \frac{-3at}{2}(\kappa_1+i\kappa_2) \\
-		\frac{-3at}{2}(\kappa_1-i\kappa_2) & 0
-	\end{pmatrix} = \frac{3at}{2}\left(-\kappa_1\sigma_1+\kappa_2\sigma_2\right)\label{eq:diracHam1}
+		0                                       & \frac{-3at\hbar}{2}(\kappa_1+i\kappa_2) \\
+		\frac{-3at\hbar}{2}(\kappa_1-i\kappa_2) & 0
+	\end{pmatrix} = \frac{3at}{2}\left(-\hbar\kappa_1\sigma_1+\hbar\kappa_2\sigma_2\right)\label{eq:diracHam1}
 \end{equation}
 y el Hamiltoniano alrededor de $\vec{K}^{-}_{mn}$
 \begin{equation}
 	\mathcal{H}^{-} = \begin{pmatrix}
-		0                                   & \frac{-3at}{2}(-\kappa_1+i\kappa_2) \\
-		\frac{-3at}{2}(-\kappa_1-i\kappa_2) & 0
-	\end{pmatrix} = \frac{3at}{2}\left(\kappa_1\sigma_1+\kappa_2\sigma_2\right)\label{eq:diracHam2}
+		0                                        & \frac{-3at\hbar}{2}(-\kappa_1+i\kappa_2) \\
+		\frac{-3at\hbar}{2}(-\kappa_1-i\kappa_2) & 0
+	\end{pmatrix} = \frac{3at}{2}\left(\hbar\kappa_1\sigma_1+\hbar\kappa_2\sigma_2\right)\label{eq:diracHam2}
 \end{equation}
 Se observa que los Hamiltonianos correspondientes a dos elementos de \eqref{eq:diracpointequiv1} son iguales, también para los elementos de \eqref{eq:diracpointequiv2}. Por lo que estos forman dos clases de equivalencia, es decir que hay dos clases de puntos de Dirac inequivalentes frente a traslaciones en los vectores primitivos de la red recíproca. Esto es consistente con el hecho de que al ser la red recíproca del grafeno de forma hexagonal, por ende con una celda de Wigner-Seitz de dos elementos, los elementos de la red recíproca se clasifican en dos clases como en el caso de la red cristalina.\par
 % Se sabe que las matrices gamma tienen dos representaciones inequivalentes en el espacio $2+1$, estas son
@@ -64,7 +65,7 @@ Se observa que los Hamiltonianos correspondientes a dos elementos de \eqref{eq:d
 
 Se sabe que las matrices de Dirac cumplen el álgebra
 \begin{equation}
-	\left\{\gamma^\mu,\gamma^\nu\right\} = 2I g^{\mu\nu}
+	\left\{\gamma^\mu,\gamma^\nu\right\} = 2I g^{\mu\nu}\label{eq:clifford}
 \end{equation}
 Para el caso en $2+1$ dimensiones, es decir que $g$ tiene una signatura $(+, -, -)$, existen dos representaciones que satisfacen esta relación:
 \begin{align}
@@ -82,18 +83,18 @@ Además, al ser matrices de $2\times 2$ si estas fueran reducibles debería exis
 
 Los Hamiltonianos de \eqref{eq:diracHam1} y \eqref{eq:diracHam2} se pueden expresar como
 \begin{equation}
-	\mathcal{H}^{+} = \frac{3at}{2}(-i\kappa_1\sigma_3\sigma_2 - i\kappa_2\sigma_3\sigma_1) \hspace{2cm}\mathcal{H}^{-} = \frac{3at}{2}(i\kappa_1\sigma_3\sigma_2 - i\kappa_2\sigma_3\sigma_1)
+	\mathcal{H}^{+} = \frac{3at}{2}(-i\hbar\kappa_1\sigma_3\sigma_2 - i\hbar\kappa_2\sigma_3\sigma_1) \hspace{2cm}\mathcal{H}^{-} = \frac{3at}{2}(i\hbar\kappa_1\sigma_3\sigma_2 - i\hbar\kappa_2\sigma_3\sigma_1)
 \end{equation}
 Entonces estas se pueden expresar como
 \begin{equation}
-	\mathcal{H}^{\pm} = \frac{3at}{2}(\kappa_1 \gamma^0\gamma^1 + \kappa_2\gamma^0\gamma^2)
+	\mathcal{H}^{\pm} = \frac{3at}{2}(\hbar\kappa_1 \gamma^0\gamma^1 + \hbar\kappa_2\gamma^0\gamma^2)
 \end{equation}
 para representaciones distintas de las matrices de Dirac. Por lo que si se quiere obtener un Hamiltoniano que considere ambas clases de equivalencia se puede elegir una representación reducible que contenga a las representaciones en \eqref{eq:DiracMatrices}. Así el Hamiltoniano tiene la forma
 \begin{equation}
 	\nonumber \mathcal{H}  = \begin{pmatrix}
 		\mathcal{H}^{+} & 0               \\
 		0               & \mathcal{H}^{-}
-	\end{pmatrix} = \frac{3at}{2}\gamma^0(\kappa_1\gamma^1+ \kappa_2 \gamma^2)\label{eq:hamilMonGraph1}
+	\end{pmatrix} = \frac{3at}{2}\gamma^0(\hbar\kappa_1\gamma^1+ \hbar\kappa_2 \gamma^2)\label{eq:hamilMonGraph1}
 \end{equation}
 donde la representación reducible de matriz de Dirac está dada por
 \begin{equation}
@@ -108,43 +109,122 @@ donde la representación reducible de matriz de Dirac está dada por
 		0          & -i\sigma_1
 	\end{pmatrix}\label{eq:reducDirac}
 \end{equation}
-\section{Campo de Dirac}
+\subsection{Campo de Dirac}
 %TODO: 
 %Cuáles son las ecuaciones de Dirac?
 %Cómo se transforman por paridad?
 La ecuación de Dirac para una partícula con espín $1/2$ es
 \begin{equation}
-	(i\gamma^\mu\partial_\mu -m)\psi = 0
+	(i\hbar\gamma^0\partial_0 - i\hbar c\gamma^i\partial_i -mc^2)\psi = 0
 \end{equation}
 Usando las dos representaciones irreducibles de la matriz de Dirac dadas en \eqref{eq:DiracMatrices} para el caso donde las partículas no tienen masa se tienen dos ecuaciones de Dirac
 \begin{align}
-	\begin{split}
-		(\sigma_3 p_0 - i\sigma_2 p_1 + i\sigma_1 p_2)\psi(t,x^1,x^2) = 0 \\
-		(\sigma_3 p_0 + i\sigma_2 p_1 + i\sigma_1 p_2) \widetilde{\psi}(t,x^1,x^2) = 0
-	\end{split}
+	i\hbar c(\frac{1}{c}\sigma_3\partial_0 - i\sigma_2\partial_1 + i\sigma_1\partial_2)\psi(t,x^1,x^2) = 0 \\
+	i\hbar c(\frac{1}{c}\sigma_3\partial_0 + i\sigma_2\partial_1 + i\sigma_1\partial_2) \widetilde{\psi}(t,x^1,x^2) = 0
 \end{align}
 Al multiplicar por la matriz $\sigma_3$ por la izquierda se obtienen
 \begin{align}
-	\begin{split}
-		(I p_0 - \sigma_1 p_1 - \sigma_2 p_2)\psi(t,x^1,x^2) = 0 \\
-		(I p_0 + \sigma_1 p_1 - \sigma_2 p_2) \widetilde{\psi}(t,x^1,x^2) = 0
-	\end{split}
+	i\hbar c(\frac{1}{c}I\partial_0 - \sigma_1\partial_1 - \sigma_2\partial_2)\psi(t,x^1,x^2) = 0 \\
+	i\hbar c(\frac{1}{c}I\partial_0 + \sigma_1\partial_1 - \sigma_2\partial_2) \widetilde{\psi}(t,x^1,x^2) = 0
 \end{align}
-Reemplazando $p_0$ por $i\partial_t$
+Entonces
 \begin{align}
-	\begin{split}
-		(\sigma_1 p_1 + \sigma_2 p_2)\psi(t,x^1,x^2) = i\frac{\partial \psi(t,x_1,x_2)}{\partial t} \\
-		(-\sigma_1 p_1 + \sigma_2 p_2) \widetilde{\psi}(t,x^1,x^2) = i\frac{\partial \widetilde{\psi}(t,x_1,x_2)}{\partial t}
-	\end{split}
+	c(\sigma_1 i\hbar\partial_1 + \sigma_2 i\hbar\partial_2)\psi(t,x^1,x^2) = i\hbar\frac{\partial \psi(t,x_1,x_2)}{\partial t} \label{eq:dirac2+1a} \\
+	c(-\sigma_1 i\hbar\partial_1 + \sigma_2 i\hbar\partial_2) \widetilde{\psi}(t,x^1,x^2) = i\hbar\frac{\partial \widetilde{\psi}(t,x_1,x_2)}{\partial t}.
 \end{align}
-Entonces los Hamiltonianos alrededor de los puntos de Dirac dados en \eqref{eq:diracHam1} y \eqref{eq:diracHam2} son los Hamiltonianos de la ecuación de Dirac en 2+1 dimensiones al reemplazar $p_1\mapsto\kappa_1$ y $p_2\mapsto\kappa_2$ para una velocidad distinta a $c$, dada por $v_F = \frac{3at}{2}$ y llamada \textbf{velocidad de fermi}.\par
-%NOTE: Qué es la velocidad de Fermi? Impone una restricción a la velocidad de las partículas? 
-%Se puede obtener la expresión del Hamiltoniano  a partir de las representaciones de las matrices de Dirac
+Así los Hamiltonianos alrededor de los puntos de Dirac, dados por \eqref{eq:diracHam1} y \eqref{eq:diracHam2}, son los Hamiltonianos de la ecuación de Dirac en 2+1 dimensiones al reemplazar $i\hbar\partial_1\mapsto\hbar\kappa_1$ y $i\hbar\partial_2\mapsto\hbar\kappa_2$ para una rapidez distinta a $c$, dada por $v_F = \frac{3at}{2}$ y llamada \emph{rapidez de fermi}. De modo que los electrones en los orbitales $p_z$ del grafeno se comportan como fermiones sin masa que se pueden mover a una velocidad límite dada por la $v_f$ en el espacio de 2+1 dimensiones.\\
 Al realizar la transformación por paridad, definida como el cambio $(x^1, x^2)\mapsto(-x^1,x^2)$, se obtiene
 \begin{align}
-	\begin{split}
-		(-\sigma_1 p_1 + \sigma_2 p_2)\psi(t,-x^1,x^2) = i\frac{\partial \psi(t,-x_1,x_2)}{\partial t} \\
-		(\sigma_1 p_1 + \sigma_2 p_2) \widetilde{\psi}(t,-x^1,x^2) = i\frac{\partial \widetilde{\psi}(t,-x_1,x_2)}{\partial t}
-	\end{split}
+	\hbar c(-i\sigma_1\hbar\partial_1 + i\sigma_2\hbar\partial_2)\psi(t,-x^1,x^2) = i\hbar\frac{\partial \psi(t,-x_1,x_2)}{\partial t}\label{eq:dirac2+1b} \\
+	\hbar c(i\sigma_1\hbar\partial_1 + i\sigma_2\hbar\partial_2) \widetilde{\psi}(t,-x^1,x^2) = i\hbar\frac{\partial \widetilde{\psi}(t,-x_1,x_2)}{\partial t}
 \end{align}
 De modo que los roles de $\psi$ y $\widetilde{\psi}$ se intercambian. Así la representación reducible en \eqref{eq:reducDirac} es invariante si se intercambian los roles de las funciones de onda asociadas a cada clase de equivalencia.
+\section{Transformaciones del campo de Dirac}
+\subsection{Transformaciones de Lorentz}
+%TODO:
+% Cuáles son las transformaciones de Lorentz de coordenadas asociadas a la ecuación de Dirac?
+% Qué grupo forman estas transformaciones
+% Cuál es el subgrupo ortocrono y propio
+En un espacio de $2+1$ dimensiones se tiene la transformación
+\begin{equation}
+	x^{\mu} \longmapsto x'^{\rho}=\Lambda^{\rho}_\mu x^{\mu}
+\end{equation}
+Para mantener la norma invariante frente a estas transformaciones de coordenadas se requiere que
+\begin{equation}
+	\begin{aligned}[b]
+		x^{\mu}g_{\mu\nu}x^{\nu} & = x'^{\rho}g_{\rho\sigma}x'^{\sigma} = \Lambda^{\rho}_\mu x^{\mu}g_{\rho\sigma}\Lambda^{\sigma}_\nu x^{\nu} \\
+		g_{\mu\nu}               & = \Lambda_\mu^{\rho}g_{\rho\sigma}\Lambda_\nu^{\sigma}
+	\end{aligned}
+\end{equation}
+Esto es
+\begin{equation}
+	\Lambda^{T}g\Lambda = g
+\end{equation}
+Así el grupo de Lorentz $O(1,2)$ al ser el grupo de transformaciones que preservan la forma se puede definir como
+\begin{equation}
+	O(1,2) = \left\{\Lambda \in \mathcal{M}_{3\times3}\mid \Lambda^{T}g\Lambda = g\right\}
+\end{equation}
+Se sabe que la determinante de una matriz satisface $\text{det}(AB) = \text{det}(A)\text{det}(B)$ y $\text{det}(A) = \text{det}(A^T)$, entonces si $\Lambda \in O(1,2)$ se tiene que
+\begin{equation}
+	\begin{aligned}[b]
+		\text{det}(\Lambda^T) \text{det}(g) \text{det}(\Lambda) & = \text{det}(g) \\
+		\text{det}(\Lambda) \text{det}(g) \text{det}(\Lambda)   & = \text{det}(g) \\
+		\text{det}(\Lambda)^2                                   & = 1             \\
+		\text{det}(\Lambda)                                     & = \pm 1.
+	\end{aligned}
+\end{equation}
+Así el subconjunto de $O(1,2)$ formado por los elementos cuya determinante es $1$ se denota por $SO(1,2)$, y es llamado el \emph{grupo especial de Lorentz}. Para probar que $SO(1,2)$ es un grupo notamos que uno de sus elementos es la matriz identidad y que para $\Lambda, \Lambda' \in SO(1,2)$ se cumple que
+\begin{equation}
+	\text{det}(\Lambda\Lambda') = \text{det}(\Lambda)\text{det}(\Lambda') =1,
+\end{equation}
+entonces $\Lambda\Lambda' \in SO(1,2)$. Además, de la definición del grupo $O(1,2)$ se tiene que para todo $\Lambda \in SO(1,2)$ existe $\Lambda''$ tal que $\Lambda\Lambda'' = \Lambda''\Lambda=I$. De la propiedad de la determinante de un producto se obtiene que $\text{det}(\Lambda'') = 1$, por ende $\Lambda'' \in SO(1,2)$, es decir que todo elemento $SO(1,2)$ tiene una inversa.\\
+Si se consideran los elementos de $SO(1,2)$ tales que $\Lambda_0^0$, estos forman forman el grupo de Lorentz ortocrono y propio, denotado por $SO^+(1,2)$
+\subsection{Transformaciones de Lorentz del campo de Dirac}
+%TODO: 
+% Cuáles son las transformaciones continuas del campo de Dirac
+% Cuáles son las transformaciones discretas del campo de Dirac
+Anteriormente se vieron las transformaciones de Lorentz en el espacio 2+1 dimensiones, sin embargo no se vio como estas transforman al campo de Dirac.
+
+Sea $\Lambda$ una transformación de Lorentz, esta genera el cambio de coordenadas $x'^\nu = \Lambda_\mu^\nu x^\mu$. Entonces
+\begin{equation}
+	\partial_\mu = \frac{\partial }{\partial x^\mu} = \frac{\partial x'^\nu}{\partial x^\mu}\frac{\partial }{\partial x'^\nu} = \Lambda_\mu^\nu\partial_\nu'
+\end{equation}
+Sea $S(\Lambda)$ un operador tal que
+\begin{equation}
+	\psi'(t',\vec{x}\,') = S(\Lambda) \psi(t,\vec{x})
+\end{equation}
+Entonces
+\begin{equation}
+	\begin{aligned}[b]
+		(i\gamma^\mu\partial_\mu - m)\psi(t,x_1,x_2)                                                & = 0 \\
+		(i\gamma^\mu\Lambda_\mu^\nu\partial'_\nu - m)S^{-1}(\Lambda)\psi'(t',x'_1,x'_2)             & =0  \\
+		(iS(\Lambda)\gamma^\mu\Lambda_\mu^\nu\partial'_\nu S^{-1}(\Lambda) - m)\psi'(t',x'_1,x'_2)  & =0  \\
+		(iS(\Lambda)\gamma^\mu\Lambda_\mu^\nu S^{-1}(\Lambda)\partial'_\nu  - m)\psi'(t',x'_1,x'_2) & =0
+	\end{aligned}
+\end{equation}
+Al comparar con la ecuación de Dirac en las coordenadas $x_\nu'$
+\begin{equation}
+	(i\gamma^\nu \partial_\nu' -m )\psi'(t',x'_1,x'_2) = 0
+\end{equation}
+se obtiene
+\begin{equation}
+	\gamma^\nu = S(\Lambda) \gamma^\mu \Lambda_\mu^{\nu}S^{-1}(\Lambda)\label{eq:lorentzfieldop}
+\end{equation}
+Para el caso de la transformación de paridad $(t,x_1,x_2)\mapsto (t,-x_1,x_2)$, la transformación de Lorentz es
+\begin{equation}
+	\Lambda = \begin{pmatrix}
+		1 & 0  & 0 \\
+		0 & -1 & 0 \\
+		0 & 0  & 1
+	\end{pmatrix}
+\end{equation}
+Entonces a partir de \eqref{eq:lorentzfieldop} se obtienen
+\begin{equation}
+	\begin{split}
+		\gamma^0 & = \;P\gamma^0 P^{-1} \\
+		\gamma^1 & = -P\gamma^1 P^{-1}  \\
+		\gamma^2 & = P\gamma^2 P^{-1}
+	\end{split}
+\end{equation}
+Al multiplicar usando las cualquiera de las representaciones las matrices de Dirac mostradas en el capítulo anterior, se obtiene que $-PP^{-1} = I$. Entonces el operador paridad $P$ no está asociado a una transformación de Lorentz.
+De igual forma se obtiene que el operador inversión temporal no está asociado a una transformación de Lorentz.
