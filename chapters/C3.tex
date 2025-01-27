@@ -153,8 +153,8 @@ Para mantener la norma invariante frente a estas transformaciones de coordenadas
 \begin{equation}
 	\begin{aligned}[b]
 		x^{\mu}g_{\mu\nu}x^{\nu} & = x'^{\rho}g_{\rho\sigma}x'^{\sigma} = \Lambda^{\rho}_\mu x^{\mu}g_{\rho\sigma}\Lambda^{\sigma}_\nu x^{\nu} \\
-		g_{\mu\nu}               & = \Lambda_\mu^{\rho}g_{\rho\sigma}\Lambda_\nu^{\sigma}
-	\end{aligned}
+		g_{\mu\nu}               & = \Lambda_\mu^{\rho}g_{\rho\sigma}\Lambda_\nu^{\sigma}.
+	\end{aligned}\label{eq:lorentztrans1}
 \end{equation}
 Esto es
 \begin{equation}
@@ -162,7 +162,7 @@ Esto es
 \end{equation}
 Así el grupo de Lorentz $O(1,2)$ al ser el grupo de transformaciones que preservan la forma se puede definir como
 \begin{equation}
-	O(1,2) = \left\{\Lambda \in \mathcal{M}_{3\times3}\mid \Lambda^{T}g\Lambda = g\right\}
+	O(1,2) = \left\{\Lambda \in \mathcal{M}_{3\times3}(\mathbb{R})\mid \Lambda^{T}g\Lambda = g\right\}
 \end{equation}
 Se sabe que la determinante de una matriz satisface $\text{det}(AB) = \text{det}(A)\text{det}(B)$ y $\text{det}(A) = \text{det}(A^T)$, entonces si $\Lambda \in O(1,2)$ se tiene que
 \begin{equation}
@@ -173,12 +173,72 @@ Se sabe que la determinante de una matriz satisface $\text{det}(AB) = \text{det}
 		\text{det}(\Lambda)                                     & = \pm 1.
 	\end{aligned}
 \end{equation}
-Así el subconjunto de $O(1,2)$ formado por los elementos cuya determinante es $1$ se denota por $SO(1,2)$, y es llamado el \emph{grupo especial de Lorentz}. Para probar que $SO(1,2)$ es un grupo notamos que uno de sus elementos es la matriz identidad y que para $\Lambda, \Lambda' \in SO(1,2)$ se cumple que
+Entonces los elementos de $O(1,2)$ se pueden dividir en dos partes, sin embargo solo una puede tener la estructura de un grupo ya que el determinante de la matriz identidad es igual a 1. Esto no es suficiente para demostrar que los elementos de $O(1,2)$ con determinante igual a 1 forman un grupo. Sean $\Lambda, \Lambda' \in SO(1,2)$, entonces se cumple que
 \begin{equation}
-	\text{det}(\Lambda\Lambda') = \text{det}(\Lambda)\text{det}(\Lambda') =1,
+	\text{det}(\Lambda\Lambda') = \text{det}(\Lambda)\text{det}(\Lambda') =1.
 \end{equation}
-entonces $\Lambda\Lambda' \in SO(1,2)$. Además, de la definición del grupo $O(1,2)$ se tiene que para todo $\Lambda \in SO(1,2)$ existe $\Lambda''$ tal que $\Lambda\Lambda'' = \Lambda''\Lambda=I$. De la propiedad de la determinante de un producto se obtiene que $\text{det}(\Lambda'') = 1$, por ende $\Lambda'' \in SO(1,2)$, es decir que todo elemento $SO(1,2)$ tiene una inversa.\\
-Si se consideran los elementos de $SO(1,2)$ tales que $\Lambda_0^0$, estos forman forman el grupo de Lorentz ortocrono y propio, denotado por $SO^+(1,2)$
+Esto implica que $\Lambda\Lambda' \in SO(1,2)$. Además, de la definición del grupo $O(1,2)$ se tiene que para todo $\Lambda \in SO(1,2)$ existe $\Lambda''$ tal que $\Lambda\Lambda'' = \Lambda''\Lambda=I$. De la propiedad de la determinante de un producto se obtiene que $\text{det}(\Lambda'') = 1$, por ende $\Lambda'' \in SO(1,2)$, es decir que todo elemento $SO(1,2)$ tiene una inversa. Todo esto prueba que los elementos de $O(1,2)$ con determinante 1 tienen la estructura de un grupo. Estos son denotados por $SO(1,2)$ y es conocido como el \emph{grupo especial de Lorentz}.
+
+Al fijar $\mu= \nu = 0$ en \eqref{eq:lorentztrans1} se obtiene que
+\begin{equation}
+	(\Lambda_0^0)^2 - \sum_i(\Lambda_0^i)^2 = 1\label{eq:relaorth1}
+\end{equation}
+Esto implica que $\abs{\Lambda_0^0}\geq 1$, por lo que al igual que para el caso de la determinante se pueden clasificar los elementos de $O(1,2)$ en dos tipos. Solo uno de estos puede formar un grupo, pues la identidad satisface $\Lambda_0^0 =1$. Para demostrar que los elementos de $O(1,2)$ con $\Lambda_0^0\geq 1$ forman un grupo se definen $\Lambda, \Lambda' \in O(1,2)$ los cuales satisfacen $\Lambda_0^0,\Lambda_0'^0\geq 1$. Entonces el elemento $\Lambda'' = \Lambda \Lambda'$ satisface
+\begin{equation}
+	\Lambda''^0_0 = \Lambda_0^0 \Lambda_0'^0 + \Lambda_1^0 \Lambda_0'^1 + \Lambda_2^0 \Lambda_0'^2\label{eq:orthoProduct}
+\end{equation}
+De \eqref{eq:lorentztrans1} se obtiene que
+\begin{equation}
+	g^{\mu\nu} = \Lambda_\rho^{\mu} g^{\rho\sigma}\Lambda_\sigma^{\nu}
+\end{equation}
+donde $g^{\mu\nu} = g_{\mu\nu}$.
+
+Por lo que al fijar $\mu=\nu=0$ se obtiene
+\begin{equation}
+	(\Lambda_0^0)^2 - \sum_i(\Lambda_i^0)^2 = 1\label{eq:relaorth2}
+\end{equation}
+Si se definen los vectores $\vec{x} = \Lambda_1^0 \hat{x} + \Lambda_2^0 \hat{y}$ y $\vec{y} = \Lambda_0'^1 \hat{x} + \Lambda_0'^2 \hat{y}$, al usar la desigualdad de Cauchy-Schwarz para un espacio vectorial euclideano
+\begin{equation}
+	\abs{\left(\vec{x}\cdot \vec{y}\right)} \leq \abs{\vec{x}}\abs{\vec{y}}
+\end{equation}
+se obtiene
+\begin{equation}
+	\abs{\Lambda_1^0 \Lambda_0'^1 + \Lambda_2^0 \Lambda_0'^2} \leq \sqrt{\left(\Lambda_1^0\right)^2 + \left(\Lambda_2^0\right)^2} \sqrt{\left(\Lambda_0'^1\right)^2 + \left(\Lambda_0'^2\right)^2}.
+\end{equation}
+Al reemplazar \eqref{eq:relaorth1}, \eqref{eq:orthoProduct} y \eqref{eq:relaorth2}  en estas desigualdades se obtienen
+\begin{equation}
+	\Lambda''^0_0 \geq \Lambda_0^0\Lambda_0'^0 - \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}
+\end{equation}
+y
+\begin{equation}
+	\Lambda''^0_0 \leq \Lambda_0^0\Lambda_0'^0 + \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\label{eq:orthchronusrelation}
+\end{equation}
+Ya que $\Lambda_0^0,\Lambda_0'^0 \geq 1$ se obtiene que $\Lambda_0''^0 \geq 0$, pero todos los elementos de $O(1,2)$ cumplen que $\abs{\Lambda_0''^0} \geq 1$, entonces $\Lambda''^0_0 \geq 1$.
+
+Sea $\Lambda$ sea un elemento de $O(1,2)$ tal que $\Lambda_0^0 \geq 1$. Entonces existe $\Lambda' \in O(1,2)$ tal que  $\Lambda\Lambda' = \Lambda'\Lambda= I$, es decir $\Lambda'$ es el elemento inverso de $\Lambda$ en el grupo $O(1,2)$. Si $\Lambda_0'^0\leq -1$, entonces a partir de \eqref{eq:orthchronusrelation} para $\Lambda'' = I$ se obtiene que
+\begin{equation}
+	1 \leq \Lambda_0\Lambda_0'^0 + \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\leq 0.
+\end{equation}
+Esto es una contradicción, por lo que $\Lambda_0'^0 \geq 1$. Entonces los elementos de $O(1,2)$ tales que $\Lambda_0^0 \geq 1$ forman un grupo.
+
+La intersección de los grupos hallados previamente sigue teniendo la estructura de un grupo, pues ninguna de las condiciones de estos interfiere con el otro. Este grupo es conocido como el \emph{grupo de Lorentz ortocrono y propio}, y es denotado por $SO^+(1,2)$. Esto se puede expresar como
+\begin{equation}
+	SO^+(1,2) = \left\{\Lambda \in O(1,2) \mid \text{det}(\Lambda) = 1 \wedge\Lambda_0^0\geq 1\right\}.
+\end{equation}
+
+Dos elementos conocidos del grupo $SO^+(1,2)$ son los boosts
+\begin{equation}
+	\begin{pmatrix}
+		\cosh\xi & \sinh\xi & 0 \\
+		\sinh\xi & \cosh\xi & 0 \\
+		0        & 0        & 1
+	\end{pmatrix} \hspace{1cm}\text{ y }\hspace{1cm}\begin{pmatrix}
+		\cosh\xi & 0 & \sinh\xi \\
+		0        & 1 & 0        \\
+		\sinh\xi & 0 & \cosh\xi
+	\end{pmatrix},
+\end{equation}
+donde $\cosh\xi= \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$.
 \subsection{Transformaciones de Lorentz del campo de Dirac}
 %TODO: 
 % Cuáles son las transformaciones continuas del campo de Dirac
