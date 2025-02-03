@@ -117,21 +117,21 @@ Y las rotaciones de la Figura \ref{fig:rotation} se puede representar como
        1 & 0\\
        0 & 1 
       \end{pmatrix} \hspace{0.9cm} r^1 = \begin{pmatrix}
-    \frac{1}{2} & -\frac{\sqrt{3}}{2}\\
-    \frac{\sqrt{3}}{2} & \frac{1}{2}
+    \frac{1}{2} & \frac{\sqrt{3}}{2}\\
+    -\frac{\sqrt{3}}{2} & \frac{1}{2}
   \end{pmatrix} \hspace{0.9cm} r^2 = \begin{pmatrix}
-  -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
-  \frac{\sqrt{3}}{2} & -\frac{1}{2}
+  -\frac{1}{2} & \frac{\sqrt{3}}{2} \\
+  -\frac{\sqrt{3}}{2} & -\frac{1}{2}
   \end{pmatrix}\\
     r^3 = \begin{pmatrix}
       -1 & 0\\
  0 & -1
     \end{pmatrix} \hspace{0.7cm} r^4 = \begin{pmatrix}
-    -\frac{1}{2} & \frac{\sqrt{3}}{2} \\
-    -\frac{\sqrt{3}}{2} & -\frac{1}{2}
+    -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+    \frac{\sqrt{3}}{2} & -\frac{1}{2}
     \end{pmatrix} \hspace{0.7cm} r^5 = \begin{pmatrix}
-  \frac{1}{2} & \frac{\sqrt{3}}{2}\\
-  -\frac{\sqrt{3}}{2} & \frac{1}{2}
+  \frac{1}{2} & -\frac{\sqrt{3}}{2}\\
+  \frac{\sqrt{3}}{2} & \frac{1}{2}
   \end{pmatrix} 
    \end{split}
 \end{align}
@@ -240,26 +240,26 @@ Además de las simetrías anteriores que dejan un punto invariante, como el eje 
 % Se puede notar que todas las posibles transformaciones que dejan invariante al grafeno se generan de combinaciones de rotaciones, traslaciones, reflexiones, simetría espejo.\\
 % Además se observa que estas transformaciones son en realidad mapeos afines, por lo que  siguiendo la notación de Seitz, se puede representar como $\left\{\mathcal{R}\mid \vec{t}\right\}$, donde $\mathcal{R}$ es una matriz de rotación y $\vec{t}$ representa una translación. Nótese que $t$ no es necesariamente una traslación que permite la conservación de la simetría del grafeno, como ejemplo se tiene que $X_1Y_2=\left\{M\mid -\frac{\vec{a}_1+\vec{a}_2}{3}\right\}$. Sin embargo, se encuentra que la parte matricial de estas transformaciones forma un grupo, cuyos elementos cumplen la relación mostrada en \cite{Lomer1955}.\\
 % Se concluye que el grafeno tiene simetrías de traslación, rotación, reflexión y espejo. Además de ser invariante a mapeos afines generados por composiciones de estas.
-\section{Grupo de simetría}
+\subsection{Grupo de simetría}
 %TODO: Con lo anterior defina el grupo de simetría para estructura del grafeno
 Los simetrías que mantienen un punto fijo satisfacen las relaciones
 \begin{table}[!httb]
   \centering
   \begin{tabular}{|c | c c c c c c c c c c c c|}
     \hline
-   & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$\\\hline
-  $e$ & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$\\
-  $r^1$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $e$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$\\
-  $r^2$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $e$ & $r^1$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $s_2$\\
+     & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$\\\hline
+  $e$  & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$\\
+  $r^1$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $e$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$\\
+  $r^2$ & $r^2$ & $r^3$ & $r^4$ & $r^5$ & $e$ & $r^1$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $s_4$\\
   $r^3$ & $r^3$ & $r^4$ & $r^5$ & $e$ & $r^1$ & $r^2$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $s_3$\\
-  $r^4$ & $r^4$ & $r^5$ & $e$ & $r^1$ & $r^2$ & $r^3$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $s_2$\\
-  $r^5$ & $r^5$ & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $s_6$ & $s_5$ & $s_4$ & $s_3$ & $s_2$ & $s_1$\\
-  $s_1$ & $s_1$ & $s_6$ & $s_5$ & $s_4$ & $s_3$ & $s_2$ & $e$ & $r^5$ & $r^4$ & $r^3$ & $r^2$ & $r^1$\\
-  $s_2$ & $s_2$ & $s_1$ & $s_6$ & $s_5$ & $s_4$ & $s_3$ & $r^1$ & $e$ & $r^5$ & $r^4$ & $r^3$ & $r^2$\\
-  $s_3$ & $s_3$ & $s_2$ & $s_1$ & $s_6$ & $s_5$ & $s_4$ & $r^2$ & $r^1$ & $e$ & $r^5$ & $r^4$ & $r^3$\\
-  $s_4$ & $s_4$ & $s_3$ & $s_2$ & $s_1$ & $s_6$ & $s_5$ & $r^3$ & $r^2$ & $r^1$ & $e$ & $r^5$ & $r^4$\\
-  $s_5$ & $s_5$ & $s_4$ & $s_3$ & $s_2$ & $s_1$ & $s_6$ & $r^4$ & $r^3$ & $r^2$ & $r^1$ & $e$ & $r^5$\\
-  $s_6$ & $s_6$ & $s_5$ & $s_4$ & $s_3$ & $s_2$ & $s_1$ & $r^5$ & $r^4$ & $r^3$ & $r^2$ & $r^1$ & $e$\\\hline
+  $r^4$ & $r^4$ & $r^5$ & $e$ & $r^1$ & $r^2$ & $r^3$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $s_2$\\
+  $r^5$ & $r^5$ & $e$ & $r^1$ & $r^2$ & $r^3$ & $r^4$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$\\
+  $s_1$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $e$ & $r^5$ & $r^4$ & $r^3$ & $r^2$ & $r^1$\\
+  $s_2$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $r^1$ & $e$ & $r^5$ & $r^4$ & $r^3$ & $r^2$\\
+  $s_3$ & $s_3$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $r^2$ & $r^1$ & $e$ & $r^5$ & $r^4$ & $r^3$\\
+  $s_4$ & $s_4$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $r^3$ & $r^2$ & $r^1$ & $e$ & $r^5$ & $r^4$\\
+  $s_5$ & $s_5$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $r^4$ & $r^3$ & $r^2$ & $r^1$ & $e$ & $r^5$\\
+  $s_6$ & $s_6$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ & $s_5$ & $r^5$ & $r^4$ & $r^3$ & $r^2$ & $r^1$ & $e$\\\hline
   \end{tabular}
 \end{table}
 

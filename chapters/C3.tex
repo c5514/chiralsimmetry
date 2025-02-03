@@ -160,9 +160,9 @@ Esto es
 \begin{equation}
 	\Lambda^{T}g\Lambda = g
 \end{equation}
-Así el grupo de Lorentz $O(1,2)$ al ser el grupo de transformaciones que preservan la forma se puede definir como
+Así el grupo de Lorentz $\mathcal{L}$ al ser el grupo de transformaciones que preservan la forma se puede definir como
 \begin{equation}
-	O(1,2) = \left\{\Lambda \in \mathcal{M}_{3\times3}(\mathbb{R})\mid \Lambda^{T}g\Lambda = g\right\}
+	\mathcal{L} = O(1,2) = \left\{\Lambda \in \mathcal{M}_{3\times3}(\mathbb{R})\mid \Lambda^{T}g\Lambda = g\right\}
 \end{equation}
 Se sabe que la determinante de una matriz satisface $\text{det}(AB) = \text{det}(A)\text{det}(B)$ y $\text{det}(A) = \text{det}(A^T)$, entonces si $\Lambda \in O(1,2)$ se tiene que
 \begin{equation}
@@ -173,11 +173,16 @@ Se sabe que la determinante de una matriz satisface $\text{det}(AB) = \text{det}
 		\text{det}(\Lambda)                                     & = \pm 1.
 	\end{aligned}
 \end{equation}
-Entonces los elementos de $O(1,2)$ se pueden dividir en dos partes, sin embargo solo una puede tener la estructura de un grupo ya que el determinante de la matriz identidad es igual a 1. Esto no es suficiente para demostrar que los elementos de $O(1,2)$ con determinante igual a 1 forman un grupo. Sean $\Lambda, \Lambda' \in SO(1,2)$, entonces se cumple que
+Entonces los elementos de $\mathcal{L}$ se pueden dividir en dos partes
+\begin{align}
+	\mathcal{L}_+ & = SO(1,2) = \left\{\Lambda \in \mathcal{M}_{3 \times 3}(\mathbb{R}) \mid \Lambda^{T}g\Lambda = g \wedge \text{det}(\Lambda) =1\right\} \\
+	\mathcal{L}_- & = \left\{\Lambda \in \mathcal{M}_{3 \times 3}(\mathbb{R}) \mid \Lambda^{T}g\Lambda = g \wedge \text{det}(\Lambda) =-1\right\}.
+\end{align}
+Sin embargo solo una puede tener la estructura de un grupo ya que el determinante de la matriz identidad es igual a 1. Esto no es suficiente para demostrar que $\mathcal{L}_+$ tiene la estructura de un grupo, ya que debe satisfacer las otras propiedades de un grupo. Sean $\Lambda, \Lambda' \in \mathcal{L}_+$, tales que $\text{det}(\Lambda),\text{det}(\Lambda')= 1$, entonces se cumple que
 \begin{equation}
 	\text{det}(\Lambda\Lambda') = \text{det}(\Lambda)\text{det}(\Lambda') =1.
 \end{equation}
-Esto implica que $\Lambda\Lambda' \in SO(1,2)$. Además, de la definición del grupo $O(1,2)$ se tiene que para todo $\Lambda \in SO(1,2)$ existe $\Lambda''$ tal que $\Lambda\Lambda'' = \Lambda''\Lambda=I$. De la propiedad de la determinante de un producto se obtiene que $\text{det}(\Lambda'') = 1$, por ende $\Lambda'' \in SO(1,2)$, es decir que todo elemento $SO(1,2)$ tiene una inversa. Todo esto prueba que los elementos de $O(1,2)$ con determinante 1 tienen la estructura de un grupo. Estos son denotados por $SO(1,2)$ y es conocido como el \emph{grupo especial de Lorentz}.
+Esto implica que $\Lambda\Lambda' \in \mathcal{L}_+$. Además, de la definición del grupo $\mathcal{L}$ se tiene que para todo $\Lambda \in \mathcal{L}_+$ existe $\Lambda''$ tal que $\Lambda\Lambda'' = \Lambda''\Lambda=I$. De la propiedad de la determinante de un producto se obtiene que $\text{det}(\Lambda'') = 1$, por ende $\Lambda'' \in \mathcal{L}_+$, es decir que todo elemento $\mathcal{L}_+$ tiene una inversa. Todo esto prueba que $\mathcal{L}_+$ es un subgrupo de $\mathcal{L}$. Este grupo es conocido como el \emph{grupo especial de Lorentz} o \emph{grupo propio de Lorentz}.
 
 Al fijar $\mu= \nu = 0$ en \eqref{eq:lorentztrans1} se obtiene que
 \begin{equation}
@@ -207,43 +212,130 @@ se obtiene
 \end{equation}
 Al reemplazar \eqref{eq:relaorth1}, \eqref{eq:orthoProduct} y \eqref{eq:relaorth2}  en estas desigualdades se obtienen
 \begin{equation}
-	\Lambda''^0_0 \geq \Lambda_0^0\Lambda_0'^0 - \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}
+	\Lambda''^0_0 \geq \Lambda_0^0\Lambda_0'^0 - \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\label{eq:orthchronusrelation1}
 \end{equation}
 y
 \begin{equation}
-	\Lambda''^0_0 \leq \Lambda_0^0\Lambda_0'^0 + \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\label{eq:orthchronusrelation}
+	\Lambda''^0_0 \leq \Lambda_0^0\Lambda_0'^0 + \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\label{eq:orthchronusrelation2}
 \end{equation}
 Ya que $\Lambda_0^0,\Lambda_0'^0 \geq 1$ se obtiene que $\Lambda_0''^0 \geq 0$, pero todos los elementos de $O(1,2)$ cumplen que $\abs{\Lambda_0''^0} \geq 1$, entonces $\Lambda''^0_0 \geq 1$.
 
-Sea $\Lambda$ sea un elemento de $O(1,2)$ tal que $\Lambda_0^0 \geq 1$. Entonces existe $\Lambda' \in O(1,2)$ tal que  $\Lambda\Lambda' = \Lambda'\Lambda= I$, es decir $\Lambda'$ es el elemento inverso de $\Lambda$ en el grupo $O(1,2)$. Si $\Lambda_0'^0\leq -1$, entonces a partir de \eqref{eq:orthchronusrelation} para $\Lambda'' = I$ se obtiene que
+Sea $\Lambda$ sea un elemento de $O(1,2)$ tal que $\Lambda_0^0 \geq 1$. Entonces existe $\Lambda' \in O(1,2)$ tal que  $\Lambda\Lambda' = \Lambda'\Lambda= I$, es decir $\Lambda'$ es el elemento inverso de $\Lambda$ en el grupo $O(1,2)$. Si $\Lambda_0'^0\leq -1$, entonces a partir de \eqref{eq:orthchronusrelation2} para $\Lambda'' = I$ se obtiene que
 \begin{equation}
 	1 \leq \Lambda_0\Lambda_0'^0 + \sqrt{\left(\Lambda_0^0\right)^2 -1} \sqrt{\left(\Lambda_0'^0\right)^2 -1}\leq 0.
 \end{equation}
-Esto es una contradicción, por lo que $\Lambda_0'^0 \geq 1$. Entonces los elementos de $O(1,2)$ tales que $\Lambda_0^0 \geq 1$ forman un grupo.
+Esto es una contradicción, por lo que $\Lambda_0'^0 \geq 1$. Entonces los elementos de $O(1,2)$ tales que $\Lambda_0^0 \geq 1$ forman un grupo, el cual será denotado por $O(1,2)^+$ o $\mathcal{L}^{\uparrow}$.
 
-La intersección de los grupos hallados previamente sigue teniendo la estructura de un grupo, pues ninguna de las condiciones de estos interfiere con el otro. Este grupo es conocido como el \emph{grupo de Lorentz ortocrono y propio}, y es denotado por $SO^+(1,2)$. Esto se puede expresar como
+La intersección de los grupos $\mathcal{L}_+$, $\mathcal{L}^{\uparrow}$ sigue teniendo la estructura de un grupo, pues ninguna de las condiciones de estos interfiere con el otro. Este grupo es conocido como el \emph{grupo de Lorentz ortocrono y propio}, y es denotado por $\mathcal{L}_+^{\uparrow}$ o $SO^+(1,2)$. Esto se puede expresar como
 \begin{equation}
-	SO^+(1,2) = \left\{\Lambda \in O(1,2) \mid \text{det}(\Lambda) = 1 \wedge\Lambda_0^0\geq 1\right\}.
+	\mathcal{L}_+^{\uparrow} = SO^+(1,2) = \left\{\Lambda \in O(1,2) \mid \text{det}(\Lambda) = 1 \wedge\Lambda_0^0\geq 1\right\}.
 \end{equation}
-
-Dos elementos conocidos del grupo $SO^+(1,2)$ son los boosts
+Los demás elementos de $O(1,2)$ se pueden clasificar en los conjuntos
+\begin{align}
+	\mathcal{L}_+^{\downarrow} & = SO^-(1,2) = \left\{\Lambda \in O(1,2)\mid \text{det}(\Lambda) = 1\wedge \Lambda_0^0\leq -1\right\} \\
+	\mathcal{L}_-^{\uparrow}   & = \left\{\Lambda \in O(1,2)\mid \text{det}(\Lambda) = -1\wedge \Lambda_0^0\geq 1\right\}             \\
+	\mathcal{L}_-^{\downarrow} & = \left\{\Lambda \in O(1,2)\mid \text{det}(\Lambda) = -1\wedge \Lambda_0^0\leq -1\right\}
+\end{align}
+Estos conjuntos están relacionados entre sí, en particular al grupo $SO^+(1,2)$, ya que son coconjuntos izquierdos de este. Para probar esto se definen los elementos de $O(1,2)$\footnote{Las transformaciones definidas en \eqref{eq:discretetrans} están asociadas a la inversión espacial, inversión temporal y la inversión del espacio-tiempo, respectivamente.}
 \begin{equation}
-	\begin{pmatrix}
+	I_s = \begin{pmatrix}
+		1 & 0  & 0 \\
+		0 & -1 & 0 \\
+		0 & 0  & 1
+	\end{pmatrix}\quad I_t = \begin{pmatrix}
+		-1 & 0 & 0 \\
+		0  & 1 & 0 \\
+		0  & 0 & 1
+	\end{pmatrix}\quad I_{st} = \begin{pmatrix}
+		-1 & 0  & 0 \\
+		0  & -1 & 0 \\
+		0  & 0  & 1
+	\end{pmatrix}\label{eq:discretetrans}
+\end{equation}
+Así, usando la propiedad del producto de matrices y las desigualdades \eqref{eq:orthchronusrelation1}, \eqref{eq:orthchronusrelation2}, se obtiene que cualquier $\Lambda \in SO^+(1,2)$ cumple que $I_s \Lambda \in \mathcal{L}_-^{\uparrow}$, $I_t \Lambda \in \mathcal{L}_-^{\downarrow}$ y $I_{st} \Lambda \in \mathcal{L}_+^{\downarrow}$. Esto demuestra que, al aplicar las transformaciones en \eqref{eq:discretetrans} a los elementos de $SO^+(1,2)$, se obtienen los elementos de los otros conjuntos, pero no garantiza que todos los elementos de estos conjuntos se puedan expresar de tal forma. Para probar esto se usa el hecho de que las transformaciones en \eqref{eq:discretetrans} son iguales a sus inversas. Para el caso de $SO^-(1,2)$, se elige un elemento de este, $\Lambda''$, y se obtiene que $I_{st} \Lambda''$ es un elemento de $SO^+(1,2)$. Esto se realiza para los demás conjuntos, y así se demuestra que son coconjuntos izquierdos de $SO^+(1,2)$.
+
+Entonces como los demás elementos de $O(1,2)$ se pueden obtener a partir de $SO^+(1,2)$ se realizará el análisis de este grupo en particular.
+
+Unas transformaciones conocidas para el caso de un espacio-tiempo 3+1 dimensional son los boosts. Para nuestro caso existen dos boosts y estos están dados por
+\begin{equation}
+	B_1(\xi) = \begin{pmatrix}
 		\cosh\xi & \sinh\xi & 0 \\
 		\sinh\xi & \cosh\xi & 0 \\
 		0        & 0        & 1
-	\end{pmatrix} \hspace{1cm}\text{ y }\hspace{1cm}\begin{pmatrix}
+	\end{pmatrix} \hspace{1cm}\text{ y }\hspace{1cm}B_2(\xi) = \begin{pmatrix}
 		\cosh\xi & 0 & \sinh\xi \\
 		0        & 1 & 0        \\
 		\sinh\xi & 0 & \cosh\xi
 	\end{pmatrix},
 \end{equation}
-donde $\cosh\xi= \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$.
+donde $\cosh\xi= \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$. Es evidente que estos son elementos del grupo $SO^+(1,2)$.
+
+Otros elementos de $SO^+(1,2)$ son las rotaciones en el espacio, las cuales se expresan como
+\begin{equation}
+	R(\theta) = \begin{pmatrix}
+		1 & 0           & 0          \\
+		0 & \cos\theta  & \sin\theta \\
+		0 & -\sin\theta & \cos\theta
+	\end{pmatrix}.
+\end{equation}
+La razón por la que hace mención estos elementos es debido a que en general los elementos de $SO^+(1,2)$ se pueden expresar como un producto de estos. La demostración de esta afirmación sigue del hecho de que \eqref{eq:relaorth1} nos permite hacer una parametrización
+\begin{equation}
+	\Lambda_0^0 = \cosh\xi\quad \Lambda_0^1 = \sinh\xi \sin\theta\quad \Lambda_0^2 = \sinh\xi \cos\theta.
+\end{equation}
+Además, al definir $\overline{t} = (1,0,0)^{T}$ se tiene que $R(\theta)B_2(\xi)\overline{t}= \Lambda \overline{t}$, es decir
+\begin{equation}
+	\begin{pmatrix}
+		1 & 0            & 0          \\
+		0 & \cos\theta   & \sin\theta \\
+		0 & - \sin\theta & \cos\theta
+	\end{pmatrix}\begin{pmatrix}
+		\cosh\xi & 0 & \sinh\xi \\
+		0        & 1 & 0        \\
+		\sinh\xi & 0 & \cosh\xi
+	\end{pmatrix}\begin{pmatrix}
+		1 \\0\\0
+	\end{pmatrix} = \begin{pmatrix}
+		\cosh\xi \\\sinh\xi\sin\theta\\\sinh\xi\cos\theta
+	\end{pmatrix}.
+\end{equation}
+La matriz $\Lambda$ es invertible ya que su determinante es 1, entonces $\Lambda^{-1}R(\theta)B_2(\xi)\vec{t}= \vec{t}$. La transformación $\Lambda' = \Lambda^{-1}R(\theta)B_2(\xi)$ debe ser un elemento de $SO^+(1,2)$ que deje invariante a $\overline{t}$, entonces
+\begin{equation}
+	\Lambda' = \Lambda^{-1}R(\theta)B_2(\xi) = \begin{pmatrix}
+		1 & \Lambda'^0_1 & \Lambda'^0_2 \\
+		0 & \Lambda'^1_1 & \Lambda'^1_2 \\
+		0 & \Lambda'^2_1 & \Lambda'^2_2
+	\end{pmatrix}.
+\end{equation}
+De \eqref{eq:relaorth2} se obtiene que $\Lambda'^0_1,\Lambda'^0_2 = 0$. Y de la condición de que la determinante es 1 se pueden parametrizar los valores restante de modo que
+\begin{equation}
+	\Lambda' = \Lambda^{-1}R(\theta)B_2(\xi) = R(-\phi).
+\end{equation}
+Entonces todo elemento de $SO^+(1,2)$ se puede descomponer como $\Lambda = R(\theta) B_2(\xi) R(\phi)$.
 \subsection{Transformaciones de Lorentz del campo de Dirac}
 %TODO: 
 % Cuáles son las transformaciones continuas del campo de Dirac
 % Cuáles son las transformaciones discretas del campo de Dirac
-Anteriormente se vieron las transformaciones de Lorentz en el espacio 2+1 dimensiones, sin embargo no se vio como estas transforman al campo de Dirac.
+Para hallar la transformación del campo de Dirac asociada a una transformación discreta es necesario hallar una representación del grupo de Lorentz. En punto en el espacio 2+1 se puede expresar como
+\begin{equation}
+	\underline{x} = \begin{pmatrix}
+		x^0+x^2 & x^1     \\
+		x^1     & x^0-x^2
+	\end{pmatrix}.
+\end{equation}
+Nótese que la norma está dada por el determinante de esta matriz.
+Sea $S \in SL(2,\mathbb{R})$, entonces la transformación
+\begin{equation}
+	\underline{x} \longmapsto \underline{x}' = S \underline{x} S^{T}
+\end{equation}
+nos permite notar que hay un homomorfismo entre los grupos $\mathcal{L}_+^{\uparrow}$ y $SL(2,\mathbb{R})$. Este es un doble cubrimiento ya que las matrices $S$, $-S$ realizan la misma transformación. Así se puede decir que los grupos $PSL(2,\mathbb{R})$ y $\mathcal{L}_+^{\uparrow}$ son isomorfos.
+
+Un grupo importante es el grupo $SU(1,1)$, ya que este es isomorfo al grupo $SL(2,\mathbb{R})$. Este es definido como
+\begin{equation}
+	SU(1,1) = \left\{S \in \mathcal{M}_{2 \times 2}(\mathbb{C})\mid S = \begin{pmatrix}
+		\alpha       & \beta         \\
+		\beta^{\ast} & \alpha^{\ast}
+	\end{pmatrix}\wedge \abs{\alpha}^2 - \abs{\beta}^2 = 1\right\}
+\end{equation}
 
 Sea $\Lambda$ una transformación de Lorentz, esta genera el cambio de coordenadas $x'^\nu = \Lambda_\mu^\nu x^\mu$. Entonces
 \begin{equation}
